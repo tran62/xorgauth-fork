@@ -1,2 +1,3 @@
-django-oidc-provider
+# django-oidc-provider
+-e git+https://github.com/fishilico/django-oidc-provider.git@django-2.0-request-user-is_authenticated#egg=django-oidc-provider
 django-bootstrap4
