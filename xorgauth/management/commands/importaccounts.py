@@ -50,6 +50,13 @@ class Command(BaseCommand):
                 continue
 
             hrid = account_data['hruid']
+
+            # Do not import accounts with no password
+            if not account_data['password']:
+                if is_verbose:
+                    print("Skipping user %s with no password (%d/%d)" % (hrid, idx_account + 1, accounts_num))
+                continue
+
             try:
                 user = User.objects.get(hrid=hrid)
                 if is_verbose:
